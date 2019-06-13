@@ -1,0 +1,4 @@
+```js exec
+    export let content;
+```
+{ content }
