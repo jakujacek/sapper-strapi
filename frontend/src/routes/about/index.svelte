@@ -12,7 +12,7 @@
 </script>
 	
 <style lang="scss">
-@import '../../style/_mixins.scss';
+@import '../../styles/_mixins.scss';
 
 	.article-list {
 		display: flex;
@@ -30,7 +30,7 @@
 	h1 {
 		color: red;
 
-		@include phone() {
+		@include phone {
 			color: blue;
 		}
 	}
