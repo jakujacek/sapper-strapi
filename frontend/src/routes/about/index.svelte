@@ -11,7 +11,9 @@
 	export let articles;
 </script>
 	
-<style>
+<style lang="scss">
+@import '../../style/_mixins.scss';
+
 	.article-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -23,6 +25,14 @@
 
 	img {
 		width: 100%;
+	}
+
+	h1 {
+		color: red;
+
+		@include phone() {
+			color: blue;
+		}
 	}
 </style>
 

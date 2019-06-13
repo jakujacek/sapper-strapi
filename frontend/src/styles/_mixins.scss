@@ -1,0 +1,56 @@
+$media-queries: ("phone-small": 360px,
+                "phone": 500px,
+                "tablet-small": 768px,
+                "tablet": 1024px,
+                "laptop-small": 1260px,
+                "laptop": 1366px,
+                "desktop-small": 1600px,
+                "desktop": 1920px);
+
+@mixin phone-small {
+    @media only screen and (min-width: map-get($media-queries, "phone-small")) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and (min-width: map-get($media-queries, "phone")) {
+        @content;
+    }
+}
+
+@mixin tablet-small() {
+    @media only screen and (min-width: map-get($media-queries, "tablet-small")) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media only screen and (min-width: map-get($media-queries, "tablet")) {
+        @content;
+    }
+}
+
+@mixin laptop-small() {
+    @media only screen and (min-width: map-get($media-queries, "laptop-small")) {
+        @content;
+    }
+}
+
+@mixin laptop() {
+    @media only screen and (min-width: map-get($media-queries, "laptop")) {
+        @content;
+    }
+}
+
+@mixin desktop-small() {
+    @media only screen and (min-width: map-get($media-queries, "desktop-small")) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media only screen and (min-width: map-get($media-queries, "desktop")) {
+        @content;
+    }
+}
