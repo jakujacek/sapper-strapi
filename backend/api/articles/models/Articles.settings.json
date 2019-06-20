@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "articles",
+  "info": {
+    "name": "articles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "article": {
+      "type": "text"
+    },
+    "main_image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "link_name": {
+      "type": "string"
+    }
+  }
+}
