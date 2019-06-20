@@ -1,11 +1,4 @@
-$media-queries: ("phone-small": 360px,
-                "phone": 500px,
-                "tablet-small": 768px,
-                "tablet": 1024px,
-                "laptop-small": 1260px,
-                "laptop": 1366px,
-                "desktop-small": 1600px,
-                "desktop": 1920px);
+@import './vars';
 
 @mixin phone-small {
     @media only screen and (min-width: map-get($media-queries, "phone-small")) {
@@ -53,4 +46,22 @@ $media-queries: ("phone-small": 360px,
     @media only screen and (min-width: map-get($media-queries, "desktop")) {
         @content;
     }
+}
+
+@mixin main-grid() {
+    display: grid;
+    grid-template-columns: $mobile-grid-margin minmax(0, 1fr) $mobile-grid-margin;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2/3;
+    }
+}
+
+@function color($color, $tone: 1) {
+    $pickColor: map-get($color-stack, #{$color});
+    $pickTone: nth($pickColor, $tone);
+    
+    @return $pickTone;
 }

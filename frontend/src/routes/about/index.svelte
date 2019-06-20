@@ -9,6 +9,7 @@
 <script>
 	import Content from '../../components/markdowns/Content.svexy'; 
 	export let articles;
+	console.log(articles);
 </script>
 	
 <style lang="scss">
@@ -21,6 +22,8 @@
 	}
 	.article-box {
 		width: 50%;
+		cursor: pointer;
+		text-decoration: none;
 	}
 
 	img {
@@ -42,10 +45,10 @@
 
 <div class="article-list">
 	{#each articles as article}
-		<div class="article-box">
-			<h1>{article.name}</h1>
-			<img src="http://localhost:1337{article.image.url}" alt="{article.name}">
-			<Content content="{article.description}" />
-		</div>
+		<a class="article-box" href='about/{ article.link_name }'>
+			<h1>{article.title}</h1>
+			<img src="http://localhost:1337{article.main_image.url}" alt="{article.title}">
+			<Content content="{article.short_description}" />
+		</a>
 	{/each}
 </div>

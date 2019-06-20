@@ -1,0 +1,17 @@
+$mobile-grid-margin: 20px;
+
+$media-queries: ("phone-small": 360px,
+                "phone": 500px,
+                "tablet-small": 768px,
+                "tablet": 1024px,
+                "laptop-small": 1260px,
+                "laptop": 1366px,
+                "desktop-small": 1600px,
+                "desktop": 1920px);
+
+$color-stack: (
+    "white": (#ffffff, #fcfcfc),
+    "black": (#000000),
+    "gray": (#F2F2F2F2),
+    "yellow": (#FFD60A)
+);
