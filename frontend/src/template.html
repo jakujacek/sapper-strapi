@@ -10,7 +10,16 @@
 	<link rel='stylesheet' href='global.css'>
 	<link rel='manifest' href='manifest.json'>
 	<link rel='icon' type='image/png' href='favicon.png'>
-	<link rel="stylesheet" async href="https://use.typekit.net/zfo3nrc.css">
+
+
+	<script>
+		window.onload = function() {
+		  const preloadLink = document.createElement("link");
+		  preloadLink.href = "fonts/web-fonts.css";
+		  preloadLink.rel = "stylesheet";
+		  document.head.appendChild(preloadLink);
+		}
+	</script>
 
 	<!-- Sapper generates a <style> tag containing critical CSS
 	     for the current page. CSS for the rest of the app is

@@ -11,7 +11,6 @@
 <script>
     import { fade } from 'svelte/transition';
 	export let article;
-	console.log(article);
 </script>
 
 <svelte:head>
@@ -22,3 +21,11 @@
     <h1>{article.title}</h1>
     <p>{article.article}</p>
 </div>
+
+{#if article.next}
+<a rel="prefetch" href="{article.next}">NEXT</a>
+{/if}
+
+{#if article.prev}
+<a rel="prefetch" href="{article.prev}">PREV</a>
+{/if}

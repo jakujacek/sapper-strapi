@@ -94,10 +94,10 @@
 	<title>Blog</title>
 </svelte:head>
 <section>
-	<div class="article-list container">
+	<div class="article-list container"> 
 		{#each articles as article}
 			{#if !!show}
-			<a rel=prefetch class="article-box" href='{ article.link_name }' in:fly="{{y:40, duration: 800 * article.id}}">
+			<a rel=prefetch class="article-box" href='{ article.link_name }' in:fly="{{y:40, duration: 800 * article.animationIndex}}">
 				<h1>{article.title}</h1>
 				<figure>
 					<img src="http://localhost:1337{article.main_image.url}" alt="{article.title}">
@@ -105,7 +105,11 @@
 				
 				<div class="short">
 					<Content content="{article.short_description}" />
+					{#if article.first}
+					<Content content="{article.article}" />
+					{/if}
 				</div>
+				
 				
 			</a>
 			{/if}
