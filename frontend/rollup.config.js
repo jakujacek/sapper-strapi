@@ -6,7 +6,7 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
-import { sass } from 'svelte-preprocess-sass';
+import { scss } from '@kazzkiq/svelte-preprocess-scss';
 import { mdsvex } from 'mdsvex';
 import blockImagePlugin from 'markdown-it-block-image';
 
@@ -25,19 +25,19 @@ export default {
 			}),
 			svelte({
 				extensions: ['.svelte', '.svexy', '.svx'],
-				hydratable: true,
-				emitCss: true,
 				preprocess: [{
-					style: sass()
-				  },
-				  mdsvex({
+					style: scss(),
+				},
+				mdsvex({
 					parser: md => md.use(blockImagePlugin),
 						markdownOptions: {
 							typographer: true,
 							linkify: true
-						  },
-				  })
+						},
+				})
 				],
+				hydratable: true,
+				emitCss: true,
 				dev,
 			}),
 			resolve(),
@@ -76,22 +76,19 @@ export default {
 			}),
 			svelte({
 				generate: 'ssr',
-				extensions: ['.svelte', '.svexy', '.svx'],
 				preprocess: [{
-					style: sass()
-				  },
-				  mdsvex({
-					parser: md => md.use(blockImagePlugin, {
-						outputContainer: true,
-						containerClassName: "image-container"
-						}),
+					style: scss(),
+				},
+				mdsvex({
+					parser: md => md.use(blockImagePlugin),
 						markdownOptions: {
 							typographer: true,
 							linkify: true
-						  },
-				  })
+						},
+				})
 				],
-				dev
+				extensions: ['.svelte', '.svexy', '.svx'],
+				dev,
 			}),
 			resolve(),
 			commonjs()

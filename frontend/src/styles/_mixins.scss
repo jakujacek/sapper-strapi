@@ -1,0 +1,67 @@
+@import './vars';
+
+@mixin phone-small {
+    @media only screen and (min-width: map-get($media-queries, "phone-small")) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and (min-width: map-get($media-queries, "phone")) {
+        @content;
+    }
+}
+
+@mixin tablet-small() {
+    @media only screen and (min-width: map-get($media-queries, "tablet-small")) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media only screen and (min-width: map-get($media-queries, "tablet")) {
+        @content;
+    }
+}
+
+@mixin laptop-small() {
+    @media only screen and (min-width: map-get($media-queries, "laptop-small")) {
+        @content;
+    }
+}
+
+@mixin laptop() {
+    @media only screen and (min-width: map-get($media-queries, "laptop")) {
+        @content;
+    }
+}
+
+@mixin desktop-small() {
+    @media only screen and (min-width: map-get($media-queries, "desktop-small")) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media only screen and (min-width: map-get($media-queries, "desktop")) {
+        @content;
+    }
+}
+
+@mixin main-grid() {
+    display: grid;
+    grid-template-columns: $mobile-grid-margin minmax(0, 1fr) $mobile-grid-margin;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2/3;
+    }
+}
+
+@function color($color, $tone: 1) {
+    $pickColor: map-get($color-stack, #{$color});
+    $pickTone: nth($pickColor, $tone);
+    
+    @return $pickTone;
+}

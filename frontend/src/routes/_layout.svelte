@@ -4,12 +4,13 @@
 	export let segment;
 </script>
 
-<style>
+<style lang="scss">
+@import '../styles/_mixins.scss';
+
 	main {
 		position: relative;
-		max-width: 56em;
+		width: 100vw;
 		background-color: white;
-		padding: 2em;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
